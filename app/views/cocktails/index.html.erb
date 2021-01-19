@@ -5,16 +5,13 @@
     </h1>
       <p>Pre-drinks shouldn't be a complicated affair,</br> so we've put together a list of</br> the best and easiest cocktails to make</p>
   </div>
-  <div class="container">
-    <div class="cocktails">
-      <h1>The cocktails:</h1>
-      <% @cocktails.each do |cocktail| %>
-        <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-        <% cocktail.doses.each do |dose| %>
-          <p><%= dose.ingredient.name %></p>
-          <p><%= dose.description %></p>
+  <div class="container mt-5">
+    <h5>Cocktails of the day:</h5>
+    <div class="cards">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+        <% @cocktails.each do |cocktail| %>
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
