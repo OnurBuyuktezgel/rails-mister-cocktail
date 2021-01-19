@@ -1,21 +1,20 @@
-<div class="container">
-  <div class="cocktails">
-    <h1>The cocktails:</h1>
-    <% @cocktails.each do |cocktail| %>
-      <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-      <% cocktail.doses.each do |dose| %>
-        <p><%= dose.ingredient.name %></p>
-        <p><%= dose.description %></p>
+<div class="banner" style="background-image: linear-gradient(rgba(192,192,192,0.2),rgba(192,192,192,0.2)), url(<%= image_path "main-banner.jpg" %>);">
+  <div class="container">
+    <h1><span id="banner-typed-text"></span></br>
+      Cocktail Recipes!
+    </h1>
+      <p>Pre-drinks shouldn't be a complicated affair,</br> so we've put together a list of</br> the best and easiest cocktails to make</p>
+  </div>
+  <div class="container">
+    <div class="cocktails">
+      <h1>The cocktails:</h1>
+      <% @cocktails.each do |cocktail| %>
+        <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+        <% cocktail.doses.each do |dose| %>
+          <p><%= dose.ingredient.name %></p>
+          <p><%= dose.description %></p>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
-
-
-<!-- app/views/articles/index.html.erb -->
-<%= cl_image_tag("vf80nacuijrqasmfm6rr",
-      width: 400, height: 300, crop: :fill) %>
-
-<!-- for face detection -->
-<%= cl_image_tag("wrhgdocebxlnaecwaxpp",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
