@@ -1,17 +1,19 @@
-<div class="banner" style="background-image: linear-gradient(rgba(192,192,192,0.2),rgba(192,192,192,0.2)), url(<%= image_path "main-banner.jpg" %>);">
-  <div class="container">
-    <h1><span id="banner-typed-text"></span></br>
-      Cocktail Recipes!
-    </h1>
-      <p>Pre-drinks shouldn't be a complicated affair,</br> so we've put together a list of</br> the best and easiest cocktails to make</p>
-  </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.4)), url(<%= image_path "whisky-banner.jpg" %>);">
+<!--   <div class="container">
+    <h5>
+      “Never been hungover. After I’ve had too much whiskey, I cook myself a large flank steak, pan-fried in salted butter. I eat that, put on a pair of wet socks and go to sleep.”
+    </h5>
+      <p class="font-italic">Ron Swanson</p>
+  </div> -->
   <div class="container mt-5">
-    <h5>Cocktails of the day:</h5>
     <div class="cards">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-        <% @cocktails.each do |cocktail| %>
+      <% @cocktails.each do |cocktail| %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= cl_image_path cocktail.photo.key %>);">
           <%= link_to cocktail.name, cocktail_path(cocktail) %>
-        <% end %>
       </div>
+      <% end %>
     </div>
   </div>
+
+<!-- https://i.imgflip.com/hs0o7.gif -->
+

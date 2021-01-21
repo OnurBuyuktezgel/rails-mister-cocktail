@@ -1,0 +1,9 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.4)), url(<%= image_path "whisky-banner.jpg" %>);">
+  <div class="container col-3">
+    <h2 class="pb-5">Add a cocktail</h2>
+      <%= simple_form_for @cocktail do |f| %>
+        <%= f.input :name %>
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit, class: 'btn btn-secondary mt-3' %>
+      <% end %>
+    </div>
