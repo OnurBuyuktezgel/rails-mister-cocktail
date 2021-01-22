@@ -1,7 +1,11 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.4)), url(<%= image_path "whisky-banner.jpg" %>);">
   <div class="container col-3">
     <div class="row">
-      <%= cl_image_tag @cocktail.photo.key, width: 300, height: 300, crop: :fit, radius: :max, border: { width: 2, color: 'white' } %>
+      <% if @cocktail.photo.attached? %>
+        <%= cl_image_tag @cocktail.photo.key, width: 300, height: 300, crop: :fit, border: { width: 2, color: 'white' } %>
+      <% else %>
+        <%= image_tag "https://i.imgflip.com/hs0o7.gif", width: 300, height: 200, crop: :fit, border: { width: 2, color: 'white' } %>
+      <% end %>
     </div>
     <div class="row mt-3">
       <h1><%= @cocktail.name %></h1>
